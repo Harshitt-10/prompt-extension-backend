@@ -11,6 +11,10 @@ const groq = new OpenAI({
     baseURL: "https://api.groq.com/openai/v1"
 });
 
+app.get("/", (req, res) => {
+    res.send("Prompt Extension Backend Running");
+});
+
 app.post("/generate", async (req, res) => {
     try {
         const { userInput } = req.body;
